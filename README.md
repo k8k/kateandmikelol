@@ -13,7 +13,7 @@ and change index.html to index.jade (be sure to remove the bundle.js script tag 
 ###Run it.
 
 ```
-npm install -g webpack webpack-dev-server
+npm install -g webpack webpack-dev-server stylus
 npm install
 npm start
 ```
