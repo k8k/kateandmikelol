@@ -1,5 +1,6 @@
 'use strict';
 var webpack = require('webpack');
+var Promise = require('es6-promise').Promise;
 var path = require('path');
 var jade = require('jade') || null;
 var HtmlWebpackPlugin = require('html-webpack-plugin');
