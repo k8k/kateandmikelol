@@ -204,6 +204,28 @@ angular.module('app', [])
     {
       Q: "Are you sending paper invites?",
       A: "Only to our grandmas."
+    },
+    {
+      Q: "Can I bring a craigslist date",
+      A: "Ideally, no, but Starline has plenty of space so, if you must, go ahead."
+    },
+    {
+      Q: "Can I eat?",
+      A: "Yup. There will be plenty of veg and gluten-free options. There may even be some meat."
+    },
+    {
+      Q: "Can I drink?",
+      A: "To your heart's content."
+    },
+    {
+      Q: "Can I smoke?",
+      A: "I mean, there's a parking lot, so sure."
+    },
+    {
+      Q: "I have more questions!!!",
+      A: "Well, since you're invited to our wedding you likely already have, at \
+      the very least, or emails. You can also email kateandmikelol@gmail.com, \
+      which we will be checking as often as we remember it exists."
     }
   ]
 
