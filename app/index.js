@@ -76,7 +76,8 @@ angular.module('app', [])
     let message = 'ES6';                        // let
     console.log(`${message} is ${status}`);     // template string
   })();
-  window.JQ = jQuery;
+
+  window.JQ = jQuery; // jshint ignore:line
 
   apiSvc.getInsta()
     .then(function(data) {
@@ -90,9 +91,11 @@ angular.module('app', [])
   $scope.qa = [
     {
       Q: "Wtf is this?",
-      A: "It's a party - we're getting married the day before at City Hall so \
-       don't expect an aisle and vows, but do expect food and drinks and \
-       possibly even some floral arrangements."
+      A: [
+        "It's a party - we're getting married the day before at City Hall so ",
+        "don't expect an aisle and vows, but do expect food and drinks and ",
+        "possibly even some floral arrangements."
+      ].join('')
     },
     {
       Q: "Okay, whatever, when is this thing?",
@@ -108,25 +111,31 @@ angular.module('app', [])
     },
     {
       Q: "Okay. Where can I stay?",
-      A: "We've booked a block of rooms at SOMEWHERE FILL IN, which is one of \
-      nicer hotels in Oakland. If you don't want to stay there, check out Airbnb \
-      or stay in San Francisco, or whatever you do you."
+      A: [
+        "We've booked a block of rooms at SOMEWHERE FILL IN, which is one of ",
+        "nicer hotels in Oakland. If you don't want to stay there, check out Airbnb ",
+        "or stay in San Francisco, or whatever you do you."
+      ].join('')
     },
     {
       Q: "What should I wear?",
-      A: "Something that looks nice and probably not white, but if you have a \
-      really fly white thing you want to wear that's cool nbd."
+      A: [
+        "Something that looks nice and probably not white, but if you have a ",
+        "really fly white thing you want to wear that's cool nbd."
+      ].join('')
     },
     {
       Q: "Where can I find your registry?",
-      A: "You can't because we don't have one! Showing up and hanging out with \
-      even though our social anxiety precludes an actual wedding is gift enough."
+      A: [
+        "You can't because we don't have one! Showing up and hanging out with ",
+        "even though our social anxiety precludes an actual wedding is gift enough."
+      ].join()
     },
     {
       Q: "Are you sending paper invites?",
       A: "Only to our grandmas."
     }
-  ]
+  ];
 
 }])
 .directive('crimeDir', ['apiSvc', function(apiSvc) {
@@ -171,10 +180,10 @@ angular.module('app', [])
       }
 
       //begin jquery animate
-      var marquee = JQ('div.marquee');
+      var marquee = JQ('div.marquee'); // jshint ignore:line
       var originalIndent = marquee.width();
       marquee.each(function() {
-        var mar = JQ(this),indent = mar.width();
+        var mar = JQ(this),indent = mar.width(); // jshint ignore:line
         mar.marquee = function() {
             indent--;
             mar.css('text-indent',indent);
@@ -184,6 +193,8 @@ angular.module('app', [])
         };
         mar.data('interval',setInterval(mar.marquee,1000/90));
       });
+
     }
-  }
+  }; //end directive return
+
 }]);
