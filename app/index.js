@@ -122,7 +122,7 @@ angular.module('app', [])
     let message = 'ES6';					            	// let
     console.log(`${message} is ${status}`);	    // template string
   })();
-  var JQ = jQuery;
+  window.JQ = jQuery;
   var SEN = 37.807082;
   var SEW = -122.266949;
   var NEN = 37.819212;
@@ -157,6 +157,9 @@ angular.module('app', [])
           //just comparing largest geo ranges for now
           if (valObj.location_1.longitude <= SEW && valObj.location_1.latitude <= NEN) {
             valObj.datetime = valObj.datetime.replace(apiSvc.crimeDateRange, octoberEnd);
+            delete valObj.policebeat;
+            delete valObj.state;
+            delete valObj.casenumber;
             memo.push(valObj);
           }
         }
@@ -166,4 +169,11 @@ angular.module('app', [])
   }
 
 
+}])
+.directive('crimeDir', [function() {
+  return {
+    link: function(scope, elem, attrs) {
+
+    }
+  }
 }]);
