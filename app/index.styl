@@ -1,20 +1,66 @@
 // coolors
-$fallgreen = #e3d26f
+$tameblue = #88ebea
 $sangria = #ca054d
 $midnight = #3b1c32
 $pale = #ffe0b5
-$sand = #ffcf9c
 $blush = #ffc9b5
 $sublimegrey = #3c3d39
+$white = #fff
 
+// fonts
 $titlefont = 'Oxygen', sans-serif
 $contentfont = Tahoma, Geneva, sans-serif
 
+// breakpoint vars
+$mobilestart = 320px
+$smallstart = 480px
+$tabletstart = 768px
+$airstart = 992px
+$thunderstart = 1200px
+
+
 body
-  background-color $pale
+  background-color $blush
   font-family $contentfont
   color $sublimegrey
+
   h1
-  	font-family $titlefont
-  	color $sangria
+    font-family $titlefont 
+    color $sangria 
+
+
+.navbar
+  background-color $tameblue
+.jumbotron
+  background-color $sangria
   
+#sharkjaws
+  background-color #fff
+  background-image url("https://lh3.googleusercontent.com/KOh_cw8FAfaWs0s3w8BjwJ8fZMVIs4hmpdzdYqb4ZMX76nrwbbUi7Vwj1GZap-ACnWDaW05O5_JobA=w414-h311-no")
+  background-size cover
+  background-position 60% center
+  border-radius 50%
+  margin auto
+  height 420px
+  width 420px
+  border 10px $pale solid
+  margin-top 15px
+
+  @media screen and (max-width: $smallstart)
+    height 300px
+    width 300px
+  @media screen and (max-width: $tabletstart)
+    margin-top 30px
+
+
+
+#helen-hero
+  height 500px
+
+  @media screen and (max-width: $smallstart)
+    height: 370px
+    
+
+
+
+

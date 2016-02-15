@@ -119,12 +119,13 @@ angular.module('app', [])
 }])
 .controller('mainCtl', ['$scope', 'apiSvc', function($scope, apiSvc) {
   console.log('in main ctl');
-  $scope.JQ = jQuery;
+  var JQ = jQuery;
   var SEN = 37.807082;
   var SEW = -122.266949;
   var NEN = 37.819212;
   var NEW = -122.278830;
   var octoberEnd = '2015-10';
+
 
   apiSvc.getCrime()
     .then(function(crimeData) {
