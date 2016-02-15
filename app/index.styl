@@ -1,5 +1,5 @@
 // coolors
-$tameblue = #88ebea
+$tameblue = #A7B9E4
 $sangria = #ca054d
 $midnight = #3b1c32
 $pale = #ffe0b5
@@ -24,19 +24,22 @@ $thunderstart = 1200px
 
 
 body
-  background-color $blush
+  background-color $pale
   font-family $contentfont
   color $sublimegrey
 
-  h1
+  h1, h2, h3, h4, h5, h6
     font-family $titlefont
+  h1
     color $sangria
+    
 
 
 .navbar
   background-color $tameblue
 .jumbotron
   background-color $sangria
+  margin-bottom 0
 
 #sharkjaws
   background-color #fff
@@ -47,7 +50,7 @@ body
   margin auto
   height 420px
   width 420px
-  border 10px $pale solid
+  border 10px $blush solid
   margin-top 15px
 
   @media screen and (max-width: $smallstart)
@@ -62,4 +65,16 @@ body
   height 500px
 
   @media screen and (max-width: $smallstart)
-    height: 370px
+    height 370px
+
+
+img.insta
+  max-width 100%
+  border-radius 50%
+  border 10px $blush solid
+
+#qa
+  background-color $blush
+
+.feature
+  padding: 30px 5%

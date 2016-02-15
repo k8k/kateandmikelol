@@ -11,6 +11,8 @@
     <script src="bundle.js"></script>
   </head>
   <body ng-controller="mainCtl" class="ng-cloak" ng-cloak>
+
+    <!-- begin nav -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -37,6 +39,8 @@
       </div>
     </nav>
     <!-- end nav -->
+
+    <!-- begin hero -->
     <div class="jumbotron" id="helen-hero">
       <div class="container" id="sharkjaws">
         <div class="row">
@@ -46,6 +50,38 @@
        </div>
       </div>
     </div>
+    <!-- end hero -->
+
+    <!-- begin instagram -->
+    <div class="container-fluid feature" id="instagram">
+      <h1>#kateandmikeLOL</h1>
+      <div class="row">
+        <div ng-repeat="photo in instagramPhotos track by $index">
+          <div class="col-md-3 col-sm-6">
+            <a href="https://www.instagram.com/explore/tags/kateandmikelol/" target="_blank">
+              <img class="insta" src="{{photo.images.standard_resolution.url}}"/>
+            </a>
+          </div> 
+        </div>
+      </div>
+    </div>
+    <!-- end instagram -->
+
+    <!-- start q&a -->
+    <div class="container-fluid feature" id="qa">
+      <h1>q & a </h1>
+      <div class="row">
+        <div ng-repeat="comment in qa track by $index">
+          <div class="col-xs-12">
+            <h3>{{ comment.Q }}</h3>
+            <h4>{{ comment.A }}</h4>
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end q & a -->
+
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
