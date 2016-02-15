@@ -7,14 +7,30 @@ $sand = #ffcf9c
 $blush = #ffc9b5
 $sublimegrey = #3c3d39
 
+// fonts
 $titlefont = 'Oxygen', sans-serif
 $contentfont = Tahoma, Geneva, sans-serif
+
+// breakpoint vars
+$mobilestart = 320px
+$smallstart = 480px
+$tabletstart = 768px
+$airstart = 992px
+$thunderstart = 1200px
+
 
 body
   background-color $pale
   font-family $contentfont
   color $sublimegrey
   h1
-  	font-family $titlefont
-  	color $sangria
-  
+    font-family $titlefont
+    color $sangria
+
+.jumbotron
+  background-color #fff
+  background-image url("http://stuffpoint.com/dogs/image/162638-dogs-doggies.jpg")
+  background-size cover
+  height: 500px
+  h1
+    color $sand
