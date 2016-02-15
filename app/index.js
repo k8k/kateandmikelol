@@ -114,6 +114,7 @@ angular.module('app', [])
   var NEW = -122.278830;
   var octoberEnd = '2015-10';
 
+
   apiSvc.getCrime()
     .then(function(crimeData) {
       var crimeResults = filterCrime(crimeData);
