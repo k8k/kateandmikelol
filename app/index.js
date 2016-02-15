@@ -5,12 +5,31 @@ module.exports = angular.module('app', []);
 angular.module('app', [])
 .factory('apiSvc', ['$http', '$q', function($http, $q) {
 
+  var octoberStart = /^2015-11/
+
 	// Return public API.
 	return({
 		addFriend: addFriend,
 		getFriends: getFriends,
-		removeFriend: removeFriend
+		removeFriend: removeFriend,
+    getCrime: getCrime,
+    crimeDescriptionKeys: [
+      'VANDALISM', 'STOLEN VEHICLE', 'DISORDERLY CONDUCT', 'ROBBERY', 'BURG - AUTO',
+      'BURG - COMMERCIAL', 'BURG - RESIDENTIAL', 'PETTY THEFT', 'WEAPONS', 'NARCOTICS',
+      'THEFT', 'BURGLARY-AUTO', 'POSSESS NARCOTIC CONTROLLED SUBSTANCE', 'ARSON'
+    ],
+    crimeDateRange: octoberStart
 	});
+
+  function getCrime() {
+    var request = $http({
+      method: "get",
+      url: "http://data.oaklandnet.com/resource/ym6k-rx7a.json",
+      params: {},
+      data: {}
+    });
+    return (request.then(handleSuccess, handleError));
+  }
 
 	// ---
 	// PUBLIC METHODS.
@@ -89,7 +108,38 @@ angular.module('app', [])
 .controller('mainCtl', ['$scope', 'apiSvc', function($scope, apiSvc) {
   console.log('in main ctl');
   var JQ = jQuery;
-  $scope.dog = 'helen';
+  var SEN = 37.807082;
+  var SEW = -122.266949;
+  var NEN = 37.819212;
+  var NEW = -122.278830;
+  var octoberEnd = '2015-10';
+
+  apiSvc.getCrime()
+    .then(function(crimeData) {
+      var crimeResults = filterCrime(crimeData);
+      console.log('filtered results', crimeResults);
+    }, function(err) {
+      if (err) {
+        console.log('ERR', err);
+      }
+    });
+
+
+  function filterCrime(crime) {
+    return crime.reduce(function(memo, valObj) {
+      if (!!~apiSvc.crimeDescriptionKeys.indexOf(valObj.crimetype)) {
+        var day = new Date(valObj.datetime);
+        if (apiSvc.crimeDateRange.test(valObj.datetime)) {
+          //just comparing largest geo ranges for now
+          if (valObj.location_1.longitude <= SEW && valObj.location_1.latitude <= NEN) {
+            valObj.datetime = valObj.datetime.replace(apiSvc.crimeDateRange, octoberEnd);
+            memo.push(valObj);
+          }
+        }
+      }
+      return memo;
+    }, []);
+  }
 
   function printMessage (status='working') {		// default params
     let message = 'ES6';					            	// let
