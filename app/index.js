@@ -118,14 +118,16 @@ angular.module('app', [])
 
 }])
 .controller('mainCtl', ['$scope', 'apiSvc', function($scope, apiSvc) {
-  console.log('in main ctl');
+  (function printMessage (status='working') {		// default params
+    let message = 'ES6';					            	// let
+    console.log(`${message} is ${status}`);	    // template string
+  })();
   var JQ = jQuery;
   var SEN = 37.807082;
   var SEW = -122.266949;
   var NEN = 37.819212;
   var NEW = -122.278830;
   var octoberEnd = '2015-10';
-
 
   apiSvc.getCrime()
     .then(function(crimeData) {
@@ -139,7 +141,7 @@ angular.module('app', [])
 
   apiSvc.getInsta()
     .then(function(data) {
-      console.log('data', data);
+      console.log('insta data', data);
     }, function(err) {
       if (err) {
         console.log('ERR', err);
@@ -162,12 +164,6 @@ angular.module('app', [])
       return memo;
     }, []);
   }
-
-  function printMessage (status='working') {		// default params
-    let message = 'ES6';					            	// let
-    console.log(`${message} is ${status}`);	    // template string
-  }
-  printMessage();
 
 
 }]);

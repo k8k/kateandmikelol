@@ -18,6 +18,10 @@ $tabletstart = 768px
 $airstart = 992px
 $thunderstart = 1200px
 
+// Force Angular data bindings to wait{{}}
+[ng\:cloak] [ng-cloak] [data-ng-cloak] [x-ng-cloak] .ng-cloak .x-ng-cloak
+  display: none !important;
+
 
 body
   background-color $blush
@@ -25,15 +29,15 @@ body
   color $sublimegrey
 
   h1
-    font-family $titlefont 
-    color $sangria 
+    font-family $titlefont
+    color $sangria
 
 
 .navbar
   background-color $tameblue
 .jumbotron
   background-color $sangria
-  
+
 #sharkjaws
   background-color #fff
   background-image url("/images/helenvideo.gif")
@@ -59,8 +63,3 @@ body
 
   @media screen and (max-width: $smallstart)
     height: 370px
-    
-
-
-
-
