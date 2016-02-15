@@ -5,12 +5,11 @@ module.exports = angular.module('app', []);
 angular.module('app', [])
 .factory('apiSvc', ['$http', '$q', function($http, $q) {
 
-  var octoberStart = /^2015-11/
+  var octoberStart = /^2015-11/;
 
 	// Return public API.
 	return({
-		addFriend: addFriend,
-		getFriends: getFriends,
+		getInsta: getInsta,
 		removeFriend: removeFriend,
     getCrime: getCrime,
     crimeDescriptionKeys: [
@@ -26,6 +25,19 @@ angular.module('app', [])
       method: "get",
       url: "http://data.oaklandnet.com/resource/ym6k-rx7a.json",
       params: {},
+      data: {}
+    });
+    return (request.then(handleSuccess, handleError));
+  }
+
+  function getInsta() {
+    var request = $http({
+      method: "jsonp",
+      url: 'https://api.instagram.com/v1/tags/nofilter/media/recent',
+      params: {
+        access_token: '47879835.1677ed0.290441ceffbf4fc682ee11a93a699238',
+        callback: 'JSON_CALLBACK'
+      },
       data: {}
     });
     return (request.then(handleSuccess, handleError));
@@ -118,6 +130,15 @@ angular.module('app', [])
     .then(function(crimeData) {
       var crimeResults = filterCrime(crimeData);
       console.log('filtered results', crimeResults);
+    }, function(err) {
+      if (err) {
+        console.log('ERR', err);
+      }
+    });
+
+  apiSvc.getInsta()
+    .then(function(data) {
+      console.log('data', data);
     }, function(err) {
       if (err) {
         console.log('ERR', err);
