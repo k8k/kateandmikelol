@@ -62,7 +62,7 @@
             <a href="https://www.instagram.com/explore/tags/kateandmikelol/" target="_blank">
               <img class="insta" src="{{photo.images.standard_resolution.url}}"/>
             </a>
-          </div> 
+          </div>
         </div>
       </div>
     </div>
@@ -76,6 +76,7 @@
           <div class="col-xs-12">
             <h3>{{ comment.Q }}</h3>
             <h4>{{ comment.A }}</h4>
+            <crime-dir ng-if="$index === 3"/>
             <hr>
           </div>
         </div>

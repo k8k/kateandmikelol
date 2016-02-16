@@ -5,12 +5,10 @@ module.exports = angular.module('app', []);
 angular.module('app', [])
 .factory('apiSvc', ['$http', '$q', function($http, $q) {
 
-  var octoberStart = /^2015-11/;
-
   // Return public API.
+  var octoberStart = /^2015-11/;
   return({
     getInsta: getInsta,
-    removeFriend: removeFriend,
     getCrime: getCrime,
     crimeDescriptionKeys: [
       'VANDALISM', 'STOLEN VEHICLE', 'DISORDERLY CONDUCT', 'ROBBERY', 'BURG - AUTO',
@@ -19,6 +17,10 @@ angular.module('app', [])
     ],
     crimeDateRange: octoberStart
   });
+
+  // ---
+  // PUBLIC METHODS.
+  // ---
 
   function getCrime() {
     var request = $http({
@@ -45,54 +47,6 @@ angular.module('app', [])
   }
 
   // ---
-  // PUBLIC METHODS.
-  // ---
-  // I add a friend with the given name to the remote collection.
-  function addFriend( name ) {
-
-    var request = $http({
-      method: "post",
-      url: "api/index.cfm",
-      params: {
-        action: "add"
-      },
-      data: {
-        name: name
-      }
-    });
-    return( request.then( handleSuccess, handleError ) );
-  }
-
-  // I get all of the friends in the remote collection.
-  function getFriends() {
-
-    var request = $http({
-      method: "get",
-      url: "api/index.cfm",
-      params: {
-        action: "get"
-      }
-    });
-    return( request.then( handleSuccess, handleError ) );
-  }
-
-  // I remove the friend with the given ID from the remote collection.
-  function removeFriend( id ) {
-
-    var request = $http({
-      method: "delete",
-      url: "api/index.cfm",
-      params: {
-        action: "delete"
-      },
-      data: {
-        id: id
-      }
-    });
-    return( request.then( handleSuccess, handleError ) );
-  }
-
-  // ---
   // PRIVATE METHODS.
   // ---
 
@@ -110,7 +64,6 @@ angular.module('app', [])
     return( $q.reject( response.data.message ) );
   }
 
-
   // I transform the successful response, unwrapping the application data
   // from the API response payload.
   function handleSuccess( response ) {
@@ -123,26 +76,11 @@ angular.module('app', [])
     let message = 'ES6';                        // let
     console.log(`${message} is ${status}`);     // template string
   })();
-  var JQ = jQuery;
-  var SEN = 37.807082;
-  var SEW = -122.266949;
-  var NEN = 37.819212;
-  var NEW = -122.278830;
-  var octoberEnd = '2015-10';
 
-  apiSvc.getCrime()
-    .then(function(crimeData) {
-      var crimeResults = filterCrime(crimeData);
-      console.log('filtered results', crimeResults);
-    }, function(err) {
-      if (err) {
-        console.log('ERR', err);
-      }
-    });
+  window.JQ = jQuery; // jshint ignore:line
 
   apiSvc.getInsta()
     .then(function(data) {
-      console.log('insta data', data);
       $scope.instagramPhotos = data.data;
     }, function(err) {
       if (err) {
@@ -150,28 +88,14 @@ angular.module('app', [])
       }
     });
 
-  function filterCrime(crime) {
-    return crime.reduce(function(memo, valObj) {
-      if (!!~apiSvc.crimeDescriptionKeys.indexOf(valObj.crimetype)) {
-        var day = new Date(valObj.datetime);
-        if (apiSvc.crimeDateRange.test(valObj.datetime)) {
-          //just comparing largest geo ranges for now
-          if (valObj.location_1.longitude <= SEW && valObj.location_1.latitude <= NEN) {
-            valObj.datetime = valObj.datetime.replace(apiSvc.crimeDateRange, octoberEnd);
-            memo.push(valObj);
-          }
-        }
-      }
-      return memo;
-    }, []);
-  }
-
   $scope.qa = [
     {
       Q: "Wtf is this?",
-      A: "It's a party - we're getting married the day before at City Hall so \
-       don't expect an aisle and vows, but do expect food and drinks and \
-       possibly even some floral arrangements."
+      A: [
+        "It's a party - we're getting married the day before at City Hall so ",
+        "don't expect an aisle and vows, but do expect food and drinks and ",
+        "possibly even some floral arrangements."
+      ].join('')
     },
     {
       Q: "Okay, whatever, when is this thing?",
@@ -187,19 +111,25 @@ angular.module('app', [])
     },
     {
       Q: "Okay. Where can I stay?",
-      A: "We've booked a block of rooms at SOMEWHERE FILL IN, which is one of \
-      nicer hotels in Oakland. If you don't want to stay there, check out Airbnb \
-      or stay in San Francisco, or whatever you do you."
+      A: [
+        "We've booked a block of rooms at SOMEWHERE FILL IN, which is one of ",
+        "nicer hotels in Oakland. If you don't want to stay there, check out Airbnb ",
+        "or stay in San Francisco, or whatever you do you."
+      ].join('')
     },
     {
       Q: "What should I wear?",
-      A: "Something that looks nice and probably not white, but if you have a \
-      really fly white thing you want to wear that's cool nbd."
+      A: [
+        "Something that looks nice and probably not white, but if you have a ",
+        "really fly white thing you want to wear that's cool nbd."
+      ].join('')
     },
     {
       Q: "Where can I find your registry?",
-      A: "You can't because we don't have one! Showing up and hanging out with \
-      even though our social anxiety precludes an actual wedding is gift enough."
+      A: [
+        "You can't because we don't have one! Showing up and hanging out with ",
+        "even though our social anxiety precludes an actual wedding is gift enough."
+      ].join()
     },
     {
       Q: "Are you sending paper invites?",
@@ -227,6 +157,66 @@ angular.module('app', [])
       the very least, or emails. You can also email kateandmikelol@gmail.com, \
       which we will be checking as often as we remember it exists."
     }
-  ]
+  ];
+
+}])
+.directive('crimeDir', ['apiSvc', function(apiSvc) {
+  return {
+    restrict: 'E',
+    scope: {},
+    templateUrl: './crime.html',
+    link: function(scope, elem, attrs) {
+      var SEN = 37.807082;
+      var SEW = -122.266949;
+      var NEN = 37.819212;
+      var NEW = -122.278830;
+      var octoberEnd = '2015-10';
+
+      apiSvc.getCrime()
+        .then(function(crimeData) {
+          scope.crimeResults = filterCrime(crimeData);
+        }, function(err) {
+          if (err) {
+            console.log('ERR', err);
+          }
+        });
+
+      function filterCrime(crime) {
+        return crime.reduce(function(memo, valObj) {
+          if (!!~apiSvc.crimeDescriptionKeys.indexOf(valObj.crimetype)) {
+            var day = new Date(valObj.datetime);
+            if (apiSvc.crimeDateRange.test(valObj.datetime)) {
+              //just comparing largest geo ranges for now
+              if (valObj.location_1.longitude <= SEW && valObj.location_1.latitude <= NEN) {
+                valObj.datetime = valObj.datetime.replace(apiSvc.crimeDateRange, octoberEnd);
+                valObj.datetime = new Date(valObj.datetime);
+                delete valObj.policebeat;
+                delete valObj.state;
+                delete valObj.casenumber;
+                memo.push(valObj);
+              }
+            }
+          }
+          return memo;
+        }, []);
+      }
+
+      //begin jquery animate
+      var marquee = JQ('div.marquee'); // jshint ignore:line
+      var originalIndent = marquee.width();
+      marquee.each(function() {
+        var mar = JQ(this),indent = mar.width(); // jshint ignore:line
+        mar.marquee = function() {
+            indent--;
+            mar.css('text-indent',indent);
+            // if (indent < -1 * mar.children('div.marquee-text').width()) {
+            //   indent = originalIndent;
+            // }
+        };
+        mar.data('interval',setInterval(mar.marquee,1000/90));
+      });
+
+    }
+  }; //end directive return
 
 }]);
