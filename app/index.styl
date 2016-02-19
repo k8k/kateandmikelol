@@ -1,22 +1,4 @@
-// coolors
-$tameblue = #A7B9E4
-$sangria = #ca054d
-$midnight = #3b1c32
-$pale = #ffe0b5
-$blush = #ffc9b5
-$sublimegrey = #3c3d39
 $white = #fff
-
-// coolors 2
-$tameblue = #dedbd2
-$sangria = #edafb8
-$midnight = #4a5759
-$pale = #f7e1d7
-$sublimegrey = #3c3d39
-$blush = #b0c4b1
-
-// coolors 3
-$tameblue = $white
 $sangria = #CC8B86  //pink
 $pale = #f7e1d7  //khaki
 $sublimegrey = #546a7b //blue grey
@@ -60,7 +42,11 @@ body
     line-height 1.25em
 
 .navbar
-  background-color $tameblue
+  background-color $white
+
+.navbar-default
+  border none
+
 .jumbotron
   background-color $sangria
   margin-bottom 0
@@ -85,6 +71,8 @@ body
 
 #helen-hero
   height 500px
+  text-align center
+
   @media screen and (max-width: $smallstart)
     height 370px
 
@@ -98,6 +86,7 @@ img.insta
 
 #qa
   background-color $white
+
   .dashes
     padding none
     margin 0
