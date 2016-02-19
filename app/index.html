@@ -45,7 +45,7 @@
       <div class="container" id="sharkjaws">
         <div class="row">
           <div class="col-xs-12">
-            <h1>WHAT UP</h1>
+            <!-- <h1>WHAT UP</h1> -->
           </div>
        </div>
       </div>
@@ -54,10 +54,10 @@
 
     <!-- begin instagram -->
     <div class="container-fluid feature" id="instagram">
-      <h1>#kateandmikeLOL</h1>
+      <h1 class="section-titles">#kateandmikeLOL</h1>
       <div class="row">
         <div ng-repeat="photo in instagramPhotos track by $index">
-          <div class="col-md-3 col-sm-6">
+          <div class="col-xs-6 col-md-3">
             <a href="https://www.instagram.com/explore/tags/kateandmikelol/" target="_blank">
               <img class="insta" src="{{photo.images.standard_resolution.url}}"/>
             </a>
@@ -69,11 +69,11 @@
 
     <!-- start q&a -->
     <div class="container-fluid feature" id="qa">
-      <h1>q & a </h1>
+      <h1 class="section-titles">q & a </h1>
       <div class="row">
         <div ng-repeat="comment in qa track by $index">
-          <div class="col-xs-12">
-            <h3>{{ comment.Q }}</h3>
+          <div class="col-xs-12" ng-class="{'alt-background' : $index % 2 >= 1}">
+            <h3 class="questions">{{ comment.Q }}</h3>
             <h4>{{ comment.A }}</h4>
             <crime-dir ng-if="$index === 3"/>
             <hr>
@@ -83,20 +83,21 @@
     </div>
     <!-- end q & a -->
 
-    <div class="container">
+    <!-- start schedule -->
+    <div class="container-fluid feature" id="schedule">
       <div class="row">
         <div class="col-xs-12">
-          <h1>helen wuz here</h1>
+          <h1 class="section-titles">schedule</h1>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <p>Dog House pet food tabby furry right paw vitamins chow. Wet Nose twine chirp brush vitamins fur hamster food meow dinnertime teeth pet supplies Rover puppy. Toy speak Spike drool critters turtle chirp. Lick nest hamster whiskers ball canary pet supplies. Running slobbery birds vitamins dragging behavior crate Mittens Rover food groom nest bark bird seed kisses canary water smooshy water dog. Biscuit tongue kitty furry paws Rover litter stay fish tail stripes water dog tail aquarium litter stripes. Licks cockatiel dog house vaccination bird food small animals behavior kitten string pet. Shake toy fish behavior birds park fetch lol catz slobbery. Swimming crate chirp dog house gimme five vitamins right paw ferret lol catz stay tooth vitamins pet supplies lick field puppy.</p>
-          <hr>
-          <p>Dog House pet food tabby furry right paw vitamins chow. Wet Nose twine chirp brush vitamins fur hamster food meow dinnertime teeth pet supplies Rover puppy. Toy speak Spike drool critters turtle chirp. Lick nest hamster whiskers ball canary pet supplies. Running slobbery birds vitamins dragging behavior crate Mittens Rover food groom nest bark bird seed kisses canary water smooshy water dog. Biscuit tongue kitty furry paws Rover litter stay fish tail stripes water dog tail aquarium litter stripes. Licks cockatiel dog house vaccination bird food small animals behavior kitten string pet. Shake toy fish behavior birds park fetch lol catz slobbery. Swimming crate chirp dog house gimme five vitamins right paw ferret lol catz stay tooth vitamins pet supplies lick field puppy.</p>
+          <schedule-dir />
         </div>
       </div>
 
     </div>
+    <!-- end schedule -->
+
   </body>
 </html>

@@ -112,9 +112,10 @@ angular.module('app', [])
     {
       Q: "Okay. Where can I stay?",
       A: [
-        "We've booked a block of rooms at SOMEWHERE FILL IN, which is one of ",
+        "We've booked a block of rooms at SOMEWHERE FILL IN, which is one of the ",
         "nicer hotels in Oakland. If you don't want to stay there, check out Airbnb ",
-        "or stay in San Francisco, or whatever you do you."
+        "or stay in San Francisco, or whatever you do you. Just whatever you do don't ",
+        "confuse the Jack London Inn for The Inn at Jack London."
       ].join('')
     },
     {
@@ -127,9 +128,9 @@ angular.module('app', [])
     {
       Q: "Where can I find your registry?",
       A: [
-        "You can't because we don't have one! Showing up and hanging out with ",
-        "even though our social anxiety precludes an actual wedding is gift enough."
-      ].join()
+        "You can't because we don't have one! Showing up and hanging out, ",
+        "even though our social anxiety precludes an actual wedding, is gift enough."
+      ].join('')
     },
     {
       Q: "Are you sending paper invites?",
@@ -194,6 +195,15 @@ angular.module('app', [])
         mar.data('interval',setInterval(mar.marquee,1000/90));
       });
 
+    }
+  }; //end directive return
+}])
+.directive('scheduleDir', ['apiSvc', function(apiSvc) {
+  return {
+    restrict: 'E',
+    scope: {},
+    templateUrl: './schedule.html',
+    link: function(scope, elem, attrs) {
     }
   }; //end directive return
 
