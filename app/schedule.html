@@ -1,29 +1,16 @@
 <div id="schedule-directive">
 
   <div class="container">
-    <div class="row">
+    <div class="row" ng-repeat="item in menuImagesAndDescriptions track by $index">
       <div class="col-md-6 col-xs-12">
-        <img id="schedule-1" src="./images/shark-fin-sketch.jpg"/>
+        <img id="schedule-{{$index}}" src="{{item.image}}"/>
       </div>
       <div class="col-md-6 col-xs-12 schedule-description">
-        text about schedule 1
+        {{item.description}}
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-6 col-xs-12">
-        <img id="schedule-1" src="./images/prawn-toasts-sketch.jpg"/>
-      </div>
-      <div class="col-md-6 col-xs-12 schedule-description">
-        text about schedule 2
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6 col-xs-12">
-        <img id="schedule-1" src="./images/chinese-broccoli-sketch.jpg"/>
-      </div>
-      <div class="col-md-6 col-xs-12 schedule-description">
-        text about schedule 3
-      </div>
-    </div>
+    <!-- END REPEATER -->
   </div>
+  <!-- END CONTAINER -->
 </div>
+<!-- END DIRECTIVE -->

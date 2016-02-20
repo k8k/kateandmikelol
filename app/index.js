@@ -71,13 +71,11 @@ angular.module('app', [])
   }
 
 }])
-.controller('mainCtl', ['$scope', 'apiSvc', function($scope, apiSvc) {
+.controller('mainCtl', ['$scope', '$location', 'apiSvc', function($scope, $location, apiSvc) {
   (function printMessage (status='working') {   // default params
     let message = 'ES6';                        // let
     console.log(`${message} is ${status}`);     // template string
   })();
-
-  window.JQ = jQuery; // jshint ignore:line
 
   apiSvc.getInsta()
     .then(function(data) {
@@ -87,6 +85,36 @@ angular.module('app', [])
         console.log('ERR', err);
       }
     });
+
+  var navOffset = jQuery('#main-nav').height();
+  console.log(navOffset);
+  $scope.scrollTo = function(selector, animateDuration) {
+    //Default is to use scroll animation
+    if (animateDuration === false) {
+      jQuery("body, html").scrollTop(jQuery(selector).offset().top - navOffset);
+    } else {
+      // Convert string ms into a number else default to 'slow' animation
+      animateDuration = ++animateDuration || 'slow';
+      jQuery("body, html").animate({scrollTop: jQuery(selector).offset().top - navOffset}, animateDuration);
+    }
+  };
+
+  //On mobile you cannot do both href and ng-click on an 'a' tag
+  //Instead do:
+  //a(ng-click="scrollTo('.sections','/account/auto-delivery')")
+  $scope.linkScrollTo = function(selector, url, flag, animateDuration) {
+    //Change route
+    $location.path(url);
+    // Flag whether to scroll or not
+    if (flag) {
+      //Scroll to selector passed in
+      $scope.scrollTo(selector, animateDuration);
+    }
+  };
+
+  $scope.scrollTop = function() {
+    jQuery("body, html").animate({scrollTop: jQuery(".angular-div").offset().top}, "slow");
+  };
 
   $scope.qa = [
     {
@@ -154,9 +182,11 @@ angular.module('app', [])
     },
     {
       Q: "I have more questions!!!",
-      A: "Well, since you're invited to our wedding you likely already have, at \
-      the very least, or emails. You can also email kateandmikelol@gmail.com, \
-      which we will be checking as often as we remember it exists."
+      A: [
+        "Well, since you're invited to our wedding you likely already have, at ",
+        "the very least, or emails. You can also email kateandmikelol@gmail.com, ",
+        "which we will be checking as often as we remember it exists."
+      ].join('')
     }
   ];
 
@@ -202,17 +232,14 @@ angular.module('app', [])
         }, []);
       }
 
-      //begin jquery animate
-      var marquee = JQ('div.marquee'); // jshint ignore:line
+      //begin jQuery animate
+      var marquee = jQuery('div.marquee'); // jshint ignore:line
       var originalIndent = marquee.width();
       marquee.each(function() {
-        var mar = JQ(this),indent = mar.width(); // jshint ignore:line
+        var mar = jQuery(this),indent = mar.width(); // jshint ignore:line
         mar.marquee = function() {
-            indent--;
-            mar.css('text-indent',indent);
-            // if (indent < -1 * mar.children('div.marquee-text').width()) {
-            //   indent = originalIndent;
-            // }
+          indent--;
+          mar.css('text-indent',indent);
         };
         mar.data('interval',setInterval(mar.marquee,1000/90));
       });
@@ -226,6 +253,38 @@ angular.module('app', [])
     scope: {},
     templateUrl: './schedule.html',
     link: function(scope, elem, attrs) {
+      scope.menuImagesAndDescriptions = [
+        {
+          image: './images/shark-fin-sketch.jpg',
+          description: 'text about schedule 1'
+        },
+        {
+          image: './images/prawn-toasts-sketch.jpg',
+          description: 'text about schedule 2'
+        },
+        {
+          image: './images/chinese-broccoli-sketch.jpg',
+          description: 'text about schedule 3'
+        },
+        {
+          image: './images/golden-steamed-sponge-sketch.jpg',
+          description: 'text about schedule 4'
+        },
+        {
+          image: './images/jelly-sketch.jpg',
+          description: 'text about schedule 5'
+        },
+        {
+          image: './images/sticky-rice-parcel-sketch.jpg',
+          description: 'text about schedule 6'
+        },
+        {
+          image: './images/coconut-tarts-sketch.jpg',
+          description: 'text about schedule 7'
+        }
+      ];
+
+
     }
   }; //end directive return
 

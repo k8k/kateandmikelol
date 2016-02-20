@@ -13,7 +13,7 @@
   <body ng-controller="mainCtl" class="ng-cloak" ng-cloak>
 
     <!-- begin nav -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav id="main-nav" class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -29,10 +29,10 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#instagram">#kateandmikeLOL</a></li>
-            <li><a href="#qa">Q & A</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
+            <li><a class="nav-buttons" ng-click="linkScrollTo('#instagram', '/instagram', 'true')">#kateandmikeLOL</a></li>
+            <li><a class="nav-buttons" ng-click="linkScrollTo('#schedule', '/schedule', 'true')">SCHEDULE</a></li>
+            <li><a class="nav-buttons" ng-click="linkScrollTo('#qa', '/qa', 'true')">Q & A</a></li>
+            <li><a class="nav-buttons" href="#">HELEN DIRECTIVE</a></li>
 
           </ul>
         </div>
