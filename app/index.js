@@ -274,28 +274,39 @@ angular.module('app', [])
       scope.menuImagesAndDescriptions = [
         {
           image: './images/shark-fin-sketch.jpg',
-          title: '10.4 - 10.6',
-          description: 'lets hang out'
+          title: 'sat october 1 - thurs october 6',
+          description: 'kates playing hooky from work - hmu if you wanna hang out.'
         },
         {
           image: './images/prawn-toasts-sketch.jpg',
-          title: '10.4 - 10.6',
-          description: 'text about schedule 2'
+          title: 'fri october 7, afternoonish',
+          description: 'going down to sf city hall to make it legal'
         },
         {
           image: './images/chinese-broccoli-sketch.jpg',
-          title: '10.4 - 10.6',
-          description: 'text about schedule 3'
+          title: 'fri october 7, eveningish',
+          description: 'a rehearsal dinner of sorts at the finest restaurant in oakland'
         },
         {
           image: './images/golden-steamed-sponge-sketch.jpg',
-          title: '10.4 - 10.6',
-          description: 'text about schedule 4'
+          title: 'sat october 8, daytime',
+          description: ['enjoy all the beauty oakland has to offer - by yourself. ',
+                        'if you are feeling particularly ambitious, saturday would ',
+                        'be a great day to take a drive up to napa or sonoma, and ',
+                        'taste some wines, or check out the golden gate bridge, or ',
+                        'idk, go to alcatraz or something. go, have a nice day, just be',
+                        'ready to party by 6pm.'
+                        ].join('')
+
         },
         {
           image: './images/jelly-sketch.jpg',
-          title: '10.4 - 10.6',
-          description: 'text about schedule 5'
+          title: 'october 8th, 6pm',
+          description: 'the most weddingy event all weekend.',
+          cocktail: '6pm: cocktail hour',
+          dinner: '7pm: dinner hour',
+          party: '8pm - 11pm: party hours',
+          afterparty: '11pm - 2am: afterparty hours'
         },
         {
           image: './images/sticky-rice-parcel-sketch.jpg',
