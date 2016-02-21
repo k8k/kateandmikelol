@@ -92,7 +92,6 @@ angular.module('app', [])
     let message = 'ES6';                        // let
     console.log(`${message} is ${status}`);     // template string
   })();
-  $scope.showHelenDir = false;
 
   apiSvc.getInsta()
     .then(function(data) {
@@ -130,6 +129,10 @@ angular.module('app', [])
   $scope.scrollTop = function() {
     jQuery("body, html").animate({scrollTop: jQuery(".angular-div").offset().top}, "slow");// jshint ignore:line
   };
+
+  $scope.launchHelen = function() {
+     $scope.$broadcast('launchHelen');
+  }
 
   $scope.qa = [
     {
@@ -348,8 +351,21 @@ angular.module('app', [])
 
       var len = Object.keys(scope.helenHash).length;
       var randomNum = Math.floor((Math.random() * len) + 1);
-
       scope.randomPic = scope.helenHash[''+randomNum];
+      scope.prevPic = scope.randomPic
+
+      scope.$on('launchHelen', function() {
+        scope.anotherHelen();
+      });
+
+      scope.anotherHelen = function anotherHelen(prevPic) {
+        randomNum = Math.floor(Math.random() * len);
+        scope.randomPic = scope.helenHash[''+randomNum];
+        if (scope.randomPic === prevPic) {
+          scope.anotherHelen(scope.randomPic);
+        }
+      }
+
     }
   };//end return
 });
