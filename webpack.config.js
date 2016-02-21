@@ -22,8 +22,8 @@ if (jade) {
   plugins.push(
     new HtmlWebpackPlugin({
           templateContent: template,
-          inject: 'body', //auto inject so we dont need to include bundle.js in our index.jade
-          favicon: 'favicon.ico'
+          inject: 'body',//auto inject so we dont need to include bundle.js in our index.jade
+          favicon: './app/testfavicon.ico'
     })
   )
 }
