@@ -32,7 +32,7 @@
             <li><a class="nav-buttons" ng-click="linkScrollTo('#instagram', '/instagram', 'true')">#kateandmikeLOL</a></li>
             <li><a class="nav-buttons" ng-click="linkScrollTo('#schedule', '/schedule', 'true')">SCHEDULE</a></li>
             <li><a class="nav-buttons" ng-click="linkScrollTo('#qa', '/qa', 'true')">Q & A</a></li>
-            <li ng-click="showHelenDir = true">PUPPY</li>
+            <li id="helen-launcher" ng-click="showHelenDir = true"><img src="./images/bone-icon.png"/></li>
           </ul>
         </div>
       </div>
@@ -98,7 +98,7 @@
     </div>
     <!-- end q & a -->
 
-  <!-- <helen-dir ng-if="showHelenDir"/> -->
-  <helen-dir/>
+  <helen-dir ng-if="showHelenDir"/>
+  <!-- <helen-dir/> -->
   </body>
 </html>
