@@ -23,7 +23,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Brand</a>
+          <a class="navbar-brand" id="helen-launcher" ng-click="showHelenDir = true"><img src="./images/donut.png"/></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -32,7 +32,6 @@
             <li><a class="nav-buttons" ng-click="linkScrollTo('#instagram', '/instagram', 'true')">#kateandmikeLOL</a></li>
             <li><a class="nav-buttons" ng-click="linkScrollTo('#schedule', '/schedule', 'true')">SCHEDULE</a></li>
             <li><a class="nav-buttons" ng-click="linkScrollTo('#qa', '/qa', 'true')">Q & A</a></li>
-            <li id="helen-launcher" ng-click="showHelenDir = true"><img src="./images/bone-icon.png"/></li>
           </ul>
         </div>
       </div>
@@ -54,7 +53,9 @@
 
     <!-- begin instagram -->
     <div class="container-fluid feature" id="instagram">
-      <h1 class="section-titles">#kateandmikeLOL</h1>
+      <a href="//www.instagram.com/explore/tags/kateandmikelol/" target="_blank">
+        <h1 class="section-titles">#kateandmikeLOL</h1>
+      </a>
       <div class="row">
         <div ng-repeat="photo in instagramPhotos track by $index">
           <div class="col-xs-6 col-md-3">
