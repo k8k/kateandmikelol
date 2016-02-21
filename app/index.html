@@ -33,6 +33,7 @@
             <li><a class="nav-buttons" ng-click="linkScrollTo('#instagram', '/instagram', 'true')">#kateandmikeLOL</a></li>
             <li><a class="nav-buttons" ng-click="linkScrollTo('#schedule', '/schedule', 'true')">SCHEDULE</a></li>
             <li><a class="nav-buttons" ng-click="linkScrollTo('#qa', '/qa', 'true')">Q & A</a></li>
+            <li><a class="nav-buttons" ng-click="linkScrollTo('#rsvp', '/rsvp', 'true')">RSVP</a></li>
           </ul>
         </div>
       </div>
@@ -86,7 +87,7 @@
 
     <!-- start q&a -->
     <div class="container-fluid feature" id="qa">
-      <h1 class="section-titles">q & a </h1>
+      <h1 class="section-titles">q & a</h1>
       <div class="row">
         <div ng-repeat="comment in qa track by $index">
           <div class="col-xs-12" ng-class="{'alt-background' : $index % 2 >= 1}">
@@ -99,6 +100,21 @@
       </div>
     </div>
     <!-- end q & a -->
+
+    <!-- start rsvp -->
+    <div class="container-fluid feature" id="rsvp">
+      <h1 class="section-titles">rsvp</h1>
+      <div class="row">
+        <div class="col-xs-12">
+          <iframe src="https://docs.google.com/forms/d/1-sxjmRM7T-ENyv0xM8xMHxNwcKk3nDdYnoQY1ijX1d0/viewform?embedded=true" width="100%" height="1200" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+        </div>
+        <div class="col-xs-12" style="background-image: url('/images/donut-pink.png'); height: 300px;">
+        </div>
+        <hr>
+      </div>
+    </div>
+    <!-- end rsvp -->
+
 
   <helen-dir/>
   <!-- <helen-dir/> -->
