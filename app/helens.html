@@ -3,12 +3,10 @@
   <div class="modal fade" id="helen-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <div class="modal-body">
-          <img src="{{randomPic}}"/>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" ng-click="anotherHelen(randomPic)">Another Pudge</button>
+        <img class="helen-image" src="{{randomPic}}"/>
+        <div class="row" id="modal-footer">
+          <button type="button" id="close-modal" class="btn btn-default" data-dismiss="modal">&times;</button>
+          <button type="button" id="next-pudge" class="btn btn-primary" ng-click="anotherHelen(randomPic)">&plus;</button>
         </div>
       </div>
     </div>
