@@ -4,11 +4,6 @@ module.exports = angular.module('app', []);
 
 angular.module('app', [])
 .config(['$httpProvider', function($httpProvider) {
-    // $httpProvider.defaults.useXDomain = true;
-    // $httpProvider.defaults.withCredentials = true;
-    // delete $httpProvider.defaults.headers.common["X-Requested-With"];
-    // $httpProvider.defaults.headers.common["Accept"] = "application/json";
-    // $httpProvider.defaults.headers.common["Content-Type"] = "application/json";
   }
 ])
 .factory('apiSvc', ['$http', '$q', function($http, $q) {
@@ -57,13 +52,14 @@ angular.module('app', [])
 
   function getHelens() {
     //utility for scraping google photos site (they dont have a public API and currently protect against CORS)
-    var expression = /"(.*)"/
-    var x = document.getElementsByClassName('RY3tic');
+    var expression = /"(.*)"/;
+    var x = document.getElementsByClassName('RY3tic');// jshint ignore:line
     var urlHash = {};
     for (var i = 0; i < x.length; i++) {
       urlHash[i] = x[i].style.backgroundImage.match(expression)[1];
     }
-    copy(urlHash); //then hit command v to assign to a large obj
+    //then hit command v to assign to a large obj
+    copy(urlHash);// jshint ignore:line
   }
 
   // ---
@@ -107,16 +103,15 @@ angular.module('app', [])
       }
     });
 
-  var navOffset = jQuery('#main-nav').height();
-  console.log(navOffset);
+  var navOffset = jQuery('#main-nav').height();// jshint ignore:line
   $scope.scrollTo = function(selector, animateDuration) {
     //Default is to use scroll animation
     if (animateDuration === false) {
-      jQuery("body, html").scrollTop(jQuery(selector).offset().top - navOffset);
+      jQuery("body, html").scrollTop(jQuery(selector).offset().top - navOffset);// jshint ignore:line
     } else {
       // Convert string ms into a number else default to 'slow' animation
       animateDuration = ++animateDuration || 'slow';
-      jQuery("body, html").animate({scrollTop: jQuery(selector).offset().top - navOffset}, animateDuration);
+      jQuery("body, html").animate({scrollTop: jQuery(selector).offset().top - navOffset}, animateDuration);// jshint ignore:line
     }
   };
 
@@ -132,9 +127,8 @@ angular.module('app', [])
       $scope.scrollTo(selector, animateDuration);
     }
   };
-
   $scope.scrollTop = function() {
-    jQuery("body, html").animate({scrollTop: jQuery(".angular-div").offset().top}, "slow");
+    jQuery("body, html").animate({scrollTop: jQuery(".angular-div").offset().top}, "slow");// jshint ignore:line
   };
 
   $scope.qa = [
@@ -307,7 +301,7 @@ angular.module('app', [])
 
 
     }
-  }; //end directive return
+  }; //directive return
 }])
 .directive('shinshinDir', function() {
   return {
@@ -315,20 +309,8 @@ angular.module('app', [])
     scope: {},
     templateUrl: './shinshin.html',
     link: function(scope, elem, attrs) {
-      scope.imageLinks = [
-        "http://www.littleshinshin.com/uploads/3/5/5/0/3550161/870857_orig.jpg",
-        "http://www.littleshinshin.com/uploads/3/5/5/0/3550161/1059428_orig.jpg" ,
-        "http://www.littleshinshin.com/uploads/3/5/5/0/3550161/3720712_orig.jpg",
-        "http://www.littleshinshin.com/uploads/3/5/5/0/3550161/4448662_orig.jpg",
-        "http://www.littleshinshin.com/uploads/3/5/5/0/3550161/8338546_orig.jpg",
-        "http://www.littleshinshin.com/uploads/3/5/5/0/3550161/114705_orig.jpg",
-        "http://www.littleshinshin.com/uploads/3/5/5/0/3550161/7015796_orig.jpg",
-        "http://www.littleshinshin.com/uploads/3/5/5/0/3550161/5616753_orig.jpg",
-        "http://www.littleshinshin.com/uploads/3/5/5/0/3550161/8117089_orig.jpg",
-      ];
-      scope.firstSlide = scope.imageLinks[0];
     }
-  }
+  };//end return
 })
 .directive('helenDir', function() {
   return {
@@ -357,5 +339,5 @@ angular.module('app', [])
         "17": "https://lh3.googleusercontent.com/tU6vUzeN7o5zhKxZMm8uThNenwjuPMUFbQ5udkTDt6qDqvsxN_7sH-UmGH9jT48u_3hjkc2kvitoCGD5ljdTUguV_eQ1_ifGHqaXVvKe9-sfsATiUfDXyHp_i2iAuS61mA9VHJ5qp9ao69pDhvxqSzURXACxo8PohC3KvChSy3iKbMEctChPOx4zgV60LX-uFAlxvA8K8zMA9VCldFs94_QPfAHlWenu9FcOn7BTEY_pxyYbrzxO0LIeU4nqzqWchqwMrjy4LIhUdMMJjHtRXb9ydKCH5GnaytX9jznxS3MuVl0yc4V-ydIsJt-y9clLPQzePWa27umIY0OXpZjOSy1ubxz3cWEXhhwtDE76pSCIXx6jGguNujgq3xahf5f9fGz6htzPL2rHb3qSX1MGnXbiEcqyPeFDQNWpH_CyYO6_-ZsetBJAV5Ar-c-ePr5KSF12H2I2NtrHE3fnwPvw3cg53AMg4BKXQa1NRA180M8uDIKtcMpe4gbETyEbPPjg4rAylMdFuSDa8DhU94_jz2I8kKdoNVZOdNZ9H7LNSGNhpJSFLeoPJ44TIgHkGTbPo2Bh=w211-h316-no"
       };
     }
-  }
-})
+  };//end return
+});

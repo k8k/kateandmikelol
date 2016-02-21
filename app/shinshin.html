@@ -1,42 +1,11 @@
-<div id="shin-shin-dir">
+<div id="shin-shin-directive">
   <div class="row">
-    <div class="col-sm-6 col-xs-12">
-      <div id="shin-shin-carousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="shin-shin-carousel" data-slide-to="{{$index}}" ng-class="{active:!$index}" ng-repeat="img in imageLinks track by $index">
-          </li>
-        </ol>
 
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-          <div class="item" ng-class="{active:!$index}" ng-repeat="img in imageLinks track by $index">
-            <img src="{{img}}" />
-          </div>
-        </div>
-        <!-- END CAROUSEL -->
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#shin-shin-carousel" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#shin-shin-carousel" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-    </div>
-    <!-- END SLIDER COLUMN -->
-
-    <div class="col-sm-6 col-xs-12">
-      <div id="shin-shin-youtube" style="margin-bottom:10px;margin-top:10px;">
-        <div class=
-        "wsite-youtube-wrapper wsite-youtube-size-auto wsite-youtube-align-center">
-        <div class="wsite-youtube-container">
-            <iframe src="http://www.youtube.com/embed/HaWnx-KT8Eo?wmode=opaque"
-            frameborder="0" allowfullscreen=""></iframe>
-          </div>
+    <div class="col-xs-12">
+      <div id="shin-shin-youtube">
+        <div id="youtube-container">
+          <iframe src="http://www.youtube.com/embed/HaWnx-KT8Eo?wmode=opaque"
+          frameborder="0" allowfullscreen=""></iframe>
         </div>
       </div>
     </div>
