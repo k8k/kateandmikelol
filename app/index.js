@@ -202,7 +202,7 @@ angular.module('app', [])
       Q: "I have more questions!!!",
       A: [
         "Well, since you're invited to our wedding you likely already have, at ",
-        "the very least, or emails. You can also email kateandmikelol@gmail.com, ",
+        "the very least, our emails. You can also email kateandmikelol@gmail.com, ",
         "which we will be checking as often as we remember it exists."
       ].join('')
     }
@@ -280,7 +280,14 @@ angular.module('app', [])
         {
           image: './images/prawn-toasts-sketch.jpg',
           title: 'fri october 7, afternoonish',
-          description: 'going down to sf city hall to make it legal'
+          description: ['going down to sf city hall to make it legal. we are trying ',
+                        'to keep this portion of the celebration as low-key as possible. ',
+                        'sf city hall is stunning so people are more than welcome to come ',
+                        'hang out, snap some pics, etc. but the ceremony itself ',
+                        'will be about 30 seconds long and just us and our witness. ',
+                        'after the cerermony we\'ll head over to a nearby bar, ',
+                        'have a cheeky drink, then hop on bart to get back to oakland.'
+                        ].join('')
         },
         {
           image: './images/chinese-broccoli-sketch.jpg',
@@ -294,8 +301,8 @@ angular.module('app', [])
                         'if you are feeling particularly ambitious, saturday would ',
                         'be a great day to take a drive up to napa or sonoma, and ',
                         'taste some wines, or check out the golden gate bridge, or ',
-                        'idk, go to alcatraz or something. go, have a nice day, just be',
-                        'ready to party by 6pm.'
+                        'idk, go to alcatraz or something. go, have a nice day, just ',
+                        'be ready to party by 6pm.'
                         ].join('')
 
         },
