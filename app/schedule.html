@@ -10,10 +10,11 @@
         <h4>
           {{item.description}}
           <ul ng-if="item.cocktail">
-            <li>{{ item.cocktail }}</li>
-            <li>{{ item.dinner }}</li>
-            <li>{{ item.party }}</li>
-            <li>{{ item.afterparty }}</li>
+            <li>&nbsp;</li>
+            <li>&ndash;&nbsp;{{ item.cocktail }}&nbsp;&ndash;</li>
+            <li>&ndash;&nbsp;&nbsp;{{ item.dinner }}&nbsp;&nbsp;&ndash;</li>
+            <li>&ndash;&nbsp;&nbsp;{{ item.party }}&nbsp;&nbsp;&ndash;</li>
+            <li>&ndash;&nbsp;&nbsp;{{ item.afterparty }}&nbsp;&nbsp;&ndash;</li>
           </ul>
         </h4>
         <shinshin-dir ng-if="$index === 2" />
