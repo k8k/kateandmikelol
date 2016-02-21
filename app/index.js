@@ -274,7 +274,11 @@ angular.module('app', [])
         {
           image: './images/shark-fin-sketch.jpg',
           title: 'sat october 1 - thurs october 6',
-          description: 'kates playing hooky from work - hmu if you wanna hang out.'
+          description: ['kate\'s playing hooky from work and wants to hang out. ',
+                        'general agenda for the week is some spa-like things, ',
+                        'drinking wine in sonoma, hanging out with dogs, maybe getting a ',
+                        'piercing. just normal stuff'
+                        ].join('')
         },
         {
           image: './images/prawn-toasts-sketch.jpg',
@@ -291,7 +295,7 @@ angular.module('app', [])
         {
           image: './images/chinese-broccoli-sketch.jpg',
           title: 'fri october 7, eveningish',
-          description: 'a rehearsal dinner of sorts at the finest restaurant in oakland'
+          description: 'a rehearsal dinner of sorts at the finest restaurant in oakland.'
         },
         {
           image: './images/golden-steamed-sponge-sketch.jpg',
