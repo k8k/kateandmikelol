@@ -93,7 +93,11 @@
         <div ng-repeat="comment in qa track by $index">
           <div class="col-xs-12" ng-class="{'alt-background' : $index % 2 >= 1}">
             <h3 class="questions">{{ comment.Q }}</h3>
-            <h4>{{ comment.A }}</h4>
+            <h4 ng-if="comment.link">
+              <a href="{{comment.link}}">{{comment.A}}</a>
+            </h4>
+            <h4 ng-if="!comment.link">{{ comment.A }}</h4>
+            
             <crime-dir ng-if="$index === 3"/>
             <hr>
           </div>
@@ -113,7 +117,7 @@
       </div>
     </div>
         <div class="container-fluid" style="background-image: url('/images/donut.png'); height: 100px;">
-    
+
     <!-- end rsvp -->
 
 

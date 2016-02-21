@@ -149,7 +149,8 @@ angular.module('app', [])
     },
     {
       Q: "Where is it?",
-      A: "Starline Social Club in Oakland, CA."
+      A: "Starline Social Club in Oakland, CA.",
+      link: "http://www.starlinesocialclub.com/"
     },
     {
       Q: "Wait it's in Oakland? Am I gonna get mugged?",
