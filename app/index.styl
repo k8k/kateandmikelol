@@ -32,12 +32,13 @@ body
 
   h1, h2, h3, h4, h5, h6
     font-family $titlefont
-  h1, h2 // titles
+  h1 // titles
     color $pink
     &.section-titles
       margin-top -17px
       margin-bottom 15px
-
+  h2
+    color $green
   h4 // content text
     line-height 1.25em
 
@@ -186,3 +187,7 @@ div.marquee > div.marquee-text
   #close-modal
     margin-right 5px
     background-color $pink
+
+
+hr 
+  border-top 2px dotted $green
