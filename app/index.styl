@@ -1,8 +1,8 @@
 $white = #fff
-$sangria = #CC8B86  //pink
-$pale = #f7e1d7  //khaki
-$sublimegrey = #546a7b //blue grey
-$blush = #b0c4b1 //green
+$pink = #CC8B86  //pink
+$khaki = #f7e1d7  //khaki
+$bluegrey = #546a7b //blue grey
+$green = #b0c4b1 //green
 $totalAccent = #f3ed86
 
 // fonts
@@ -26,14 +26,14 @@ $thunderstart = 1200px
   float none !important
 
 body
-  background-color $pale
+  background-color $khaki
   font-family $contentfont
-  color $sublimegrey
+  color $bluegrey
 
   h1, h2, h3, h4, h5, h6
     font-family $titlefont
   h1 // titles
-    color $sangria
+    color $pink
     &.section-titles
       margin-top -17px
       margin-bottom 15px
@@ -53,9 +53,11 @@ li#helen-launcher
     max-height 50px
     max-width 50px
 
+.navbar-brand
+  padding-top 0 !important
 
 .jumbotron
-  background-color $sangria
+  background-color $pink
   margin-bottom 0
 
 #sharkjaws
@@ -67,7 +69,7 @@ li#helen-launcher
   margin auto
   height 420px
   width 420px
-  border 10px $blush solid
+  border 10px $green solid
   margin-top 15px
 
   @media screen and (max-width: $smallstart)
@@ -79,17 +81,24 @@ li#helen-launcher
 #helen-hero
   height 500px
   text-align center
-
+  h1, h2
+    color RGBA(255, 255, 255, .65)
+    font-weight 600
+    
+    
   @media screen and (max-width: $smallstart)
     height 370px
 
 #instagram
-  background-color $pale
+  background-color $khaki
+  
+  a:hover
+    text-decoration none
 
 img.insta
   max-width 100%
   border-radius 50%
-  border 10px $blush solid
+  border 10px $green solid
 
 #qa
   background-color $white
@@ -103,7 +112,7 @@ img.insta
     padding none
     margin-top 15px
   .alt-background
-    background-color $pale
+    background-color $khaki
 
 .feature
   padding 30px 5%
@@ -115,7 +124,7 @@ img.insta
 div.marquee
   white-space no-wrap
   overflow hidden
-  color $sangria
+  color $pink
 
 div.marquee > div.marquee-text
   white-space nowrap
@@ -129,16 +138,17 @@ div.marquee > div.marquee-text
     max-width 400px
 
   .schedule-description
-    background-color $pale
+    background-color $khaki
 
 
 // SHIN SHIN
 #shin-shin-directive
   #youtube-container
+    text-align center
     iframe
-      // height 275px
-      // min-width 320px
-      // max-width 450px
+      height 275px
+      width 450px
+      max-width 100%
 
 //HELEN DIRECTIVE
 // #helen-directive

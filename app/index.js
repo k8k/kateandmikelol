@@ -271,30 +271,37 @@ angular.module('app', [])
       scope.menuImagesAndDescriptions = [
         {
           image: './images/shark-fin-sketch.jpg',
-          description: 'text about schedule 1'
+          title: '10.4 - 10.6',
+          description: 'lets hang out'
         },
         {
           image: './images/prawn-toasts-sketch.jpg',
+          title: '10.4 - 10.6',
           description: 'text about schedule 2'
         },
         {
           image: './images/chinese-broccoli-sketch.jpg',
+          title: '10.4 - 10.6',
           description: 'text about schedule 3'
         },
         {
           image: './images/golden-steamed-sponge-sketch.jpg',
+          title: '10.4 - 10.6',
           description: 'text about schedule 4'
         },
         {
           image: './images/jelly-sketch.jpg',
+          title: '10.4 - 10.6',
           description: 'text about schedule 5'
         },
         {
           image: './images/sticky-rice-parcel-sketch.jpg',
+          title: '10.4 - 10.6',
           description: 'text about schedule 6'
         },
         {
           image: './images/coconut-tarts-sketch.jpg',
+          title: '10.4 - 10.6',
           description: 'text about schedule 7'
         }
       ];
