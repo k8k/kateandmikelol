@@ -361,7 +361,7 @@ angular.module('app', [])
       };
 
       var len = Object.keys(scope.helenHash).length;
-      var randomNum = Math.floor((Math.random() * len) + 1);
+      var randomNum = Math.floor(Math.random() * len);
       scope.randomPic = scope.helenHash[''+randomNum];
       scope.prevPic = scope.randomPic
 

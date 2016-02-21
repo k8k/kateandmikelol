@@ -84,14 +84,14 @@ li#helen-launcher
   h1, h2
     color RGBA(255, 255, 255, .65)
     font-weight 600
-    
-    
+
+
   @media screen and (max-width: $smallstart)
     height 370px
 
 #instagram
   background-color $khaki
-  
+
   a:hover
     text-decoration none
 
@@ -153,4 +153,30 @@ div.marquee > div.marquee-text
       max-width 100%
 
 //HELEN DIRECTIVE
-// #helen-directive
+#helen-directive
+  .modal-content
+    margin 0 auto
+    padding none
+    width 500px
+    height 500px
+    border-radius 50%
+  .helen-image
+    border-radius 50%
+    height 100%
+    width 100%
+    border 12px solid $green
+  #modal-footer
+    margin 0 auto
+    text-align center
+  #next-pudge, #close-modal
+    margin-top 5px
+    border-radius 50%
+    border 2px solid $white
+    height 70px
+    width 70px
+  #next-pudge
+    margin-left 5px
+    background-color $green
+  #close-modal
+    margin-right 5px
+    background-color $pink
