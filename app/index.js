@@ -284,7 +284,7 @@ angular.module('app', [])
         {
           image: './images/prawn-toasts-sketch.jpg',
           title: 'fri october 7, afternoonish',
-          description: ['going down to sf city hall to make it legal. we are trying ',
+          description: ['we \'re going down to sf city hall to make it legal. we are trying ',
                         'to keep this portion of the celebration as low-key as possible. ',
                         'sf city hall is stunning so people are more than welcome to come ',
                         'hang out, snap some pics, etc. but the ceremony itself ',
@@ -296,7 +296,11 @@ angular.module('app', [])
         {
           image: './images/chinese-broccoli-sketch.jpg',
           title: 'fri october 7, eveningish',
-          description: 'a rehearsal dinner of sorts at the finest restaurant in oakland.'
+          description: ['a rehearsal dinner of sorts at the finest restaurant in oakland. ',
+                        'if you\'ll already be in town on friday and would like to ',
+                        'join, let us know in your rsvp. if you\'re in town and would ',
+                        'rather not, no worries. the real party is saturday.'
+                        ].join('')
         },
         {
           image: './images/golden-steamed-sponge-sketch.jpg',
