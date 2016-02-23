@@ -41,6 +41,13 @@ body
     color $green
   h4 // content text
     line-height 1.25em
+  
+  a
+    color $green
+    &:hover
+      text-decoration none
+      color $bluegrey
+      
 
 .navbar
   background-color $white
@@ -48,6 +55,21 @@ body
 
 .navbar-default
   border none
+  
+.navbar-default .navbar-toggle span.icon-bar
+  width 25px 
+  height 4px
+  background-color $bluegrey
+
+.navbar-default .navbar-toggle
+  border none
+  margin-top 5px
+  margin-bottom 5px
+
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover
+  background-color #fff
+
 
 a.nav-buttons
   cursor pointer
@@ -105,6 +127,7 @@ img.insta
   max-width 100%
   border-radius 50%
   border 10px $green solid
+  margin-bottom 10px
 
 #qa
   background-color $white
@@ -139,6 +162,9 @@ div.marquee > div.marquee-text
 
 //SCHEDULE
 #schedule-directive
+  hr
+    margin-top -5px
+  
   .row img
     width 100%
     max-width 400px
@@ -199,7 +225,6 @@ div.marquee > div.marquee-text
   #close-modal
     margin-right 5px
     background-color $pink
-
 
 hr 
   border-top 2px dotted $green

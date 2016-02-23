@@ -160,17 +160,24 @@ angular.module('app', [])
     {
       Q: "Okay. Where can I stay?",
       A: [
-        "We've booked a block of rooms at SOMEWHERE FILL IN, which is one of the ",
-        "nicer hotels in Oakland. If you don't want to stay there, check out Airbnb ",
-        "or stay in San Francisco, or whatever you do you. Just whatever you do don't ",
-        "confuse the Jack London Inn for The Inn at Jack London."
+        "We've booked a block of rooms at The Waterfront Hotel, which is one of the ",
+        "nicer hotels in Oakland - the group rate code is KUCHIN-WALKER."
+      ].join('')
+    },
+        {
+    Q: "Damn, that hotel is expensive.",
+      A: [
+        "Yeah, it'll run you $289 a night, but it is right on the water in a great ",
+        "part of town. That said, we realize that's a lot so we're working on ",
+        "finding a more affordable spot. If you're inclined to investigate on ",
+        "your own, give Emeryville hotels a shot or check out Airbnb."
       ].join('')
     },
     {
       Q: "What should I wear?",
       A: [
         "Something that looks nice and probably not white, but if you have a ",
-        "really fly white thing you want to wear that's cool nbd."
+        "really fly white thing you want to wear, that's cool NBD."
       ].join('')
     },
     {
@@ -186,11 +193,11 @@ angular.module('app', [])
     },
     {
       Q: "Can I bring a craigslist date",
-      A: "Ideally, no, but Starline has plenty of space so, if you must, go ahead."
+      A: "Ideally, no. But, Starline has plenty of space so, if you must, go ahead."
     },
     {
       Q: "Can I eat?",
-      A: "Yup. There will be plenty of veg and gluten-free options. There may even be some meat."
+      A: "Yup. There will be veg and gluten-free options. There may even be some meat."
     },
     {
       Q: "Can I drink?",
@@ -204,8 +211,9 @@ angular.module('app', [])
       Q: "I have more questions!!!",
       A: [
         "Well, since you're invited to our wedding you likely already have, at ",
-        "the very least, our emails. You can also email kateandmikelol@gmail.com, ",
-        "which we will be checking as often as we remember it exists."
+        "the very least, our emails and maybe even our phone numbers. You can ",
+        "also email kateandmikelol@gmail.com, which we will be checking as often ",
+        "as we remember it exists."
       ].join('')
     }
   ];
@@ -275,63 +283,62 @@ angular.module('app', [])
         {
           image: './images/shark-fin-sketch.jpg',
           title: 'sat october 1 - thurs october 6',
-          description: ['kate\'s playing hooky from work and wants to hang out. ',
-                        'general agenda for the week is some spa-like things, ',
-                        'drinking wine in sonoma, hanging out with dogs, maybe getting a ',
-                        'piercing. just normal stuff'
+          description: ['Kate\'s playing hooky from work and wants to hang out. ',
+                        'General agenda for the week is some spa-like things, ',
+                        'drinking wine in Sonoma, hanging out with dogs, maybe getting a ',
+                        'piercing. Just normal stuff.'
                         ].join('')
         },
         {
           image: './images/prawn-toasts-sketch.jpg',
           title: 'fri october 7, afternoonish',
-          description: ['we \'re going down to sf city hall to make it legal. we are trying ',
+          description: ['We \'re going down to SF City Hall to make it legal. We are trying ',
                         'to keep this portion of the celebration as low-key as possible. ',
-                        'sf city hall is stunning so people are more than welcome to come ',
+                        'City Hall is stunning so people are more than welcome to come ',
                         'hang out, snap some pics, etc. but the ceremony itself ',
-                        'will be about 30 seconds long and just us and our witness. ',
-                        'after the cerermony we\'ll head over to a nearby bar, ',
-                        'have a cheeky drink, then hop on bart to get back to oakland.'
+                        'will be about 30 seconds long and just us and our witness.'
                         ].join('')
         },
         {
           image: './images/chinese-broccoli-sketch.jpg',
           title: 'fri october 7, eveningish',
-          description: ['a rehearsal dinner of sorts at the finest restaurant in oakland. ',
-                        'if you\'ll already be in town on friday and would like to ',
-                        'join, let us know in your rsvp. if you\'re in town and would ',
-                        'rather not, no worries. the real party is saturday.'
+          description: ['A rehearsal dinner of sorts at the finest restaurant in Oakland. ',
+                        'If you\'ll already be in town on Friday and would like to ',
+                        'join, let us know in your RSVP. Space is very limited.'
                         ].join('')
         },
         {
           image: './images/golden-steamed-sponge-sketch.jpg',
           title: 'sat october 8, daytime',
-          description: ['enjoy all the beauty oakland has to offer - by yourself. ',
-                        'if you are feeling particularly ambitious, saturday would ',
-                        'be a great day to take a drive up to napa or sonoma, and ',
-                        'taste some wines, or check out the golden gate bridge, or ',
-                        'idk, go to alcatraz or something. go, have a nice day, just ',
-                        'be ready to party by 6pm.'
+          description: ['Enjoy all the beauty Oakland has to offer - by yourself! ',
+                        'Go, have a nice day, just be ready to party by 6pm.'
                         ].join('')
 
         },
         {
           image: './images/jelly-sketch.jpg',
-          title: 'october 8th, 6pm',
-          description: 'the most weddingy event all weekend.',
-          cocktail: '6pm: cocktail hour',
-          dinner: '7pm: dinner hour',
-          party: '8pm - 11pm: party hours',
-          afterparty: '11pm - 2am: afterparty hours'
+          title: 'october 8, 6pm',
+          description: 'Starline Social Club',
+          cocktail: '6pm: Cocktail Hour',
+          dinner: '7pm: Dinner Hour',
+          party: '8pm - 11pm: Party Hours',
+          afterparty: '11pm - 2am: Afterparty Hours'
         },
         {
           image: './images/sticky-rice-parcel-sketch.jpg',
-          title: '10.4 - 10.6',
-          description: 'text about schedule 6'
+          title: 'sun october 9 - mon october 10',
+          description: [
+            "If you're trying to make a week of it, and aren't sick of us ,",
+            "we'll be hanging around Oakland for a couple of days after the party.",
+            ].join('')
         },
         {
           image: './images/coconut-tarts-sketch.jpg',
-          title: '10.4 - 10.6',
-          description: 'text about schedule 7'
+          title: 'tues october 11 - sunday october 16',
+          description: [
+            "Byeeeeeee we're goign to Hawaii (or maybe Reno, if we're feeling ",
+            "lazy or poor or both)."
+            ].join('')
         }
       ];
 
